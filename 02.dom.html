@@ -14,11 +14,15 @@
 </head>
 
 <body>
-    <h1 class="myH1">My H1</h1>
+    <h1 class="myH1">1 My H1</h1>
+    <h1 class="myH1">2 My H1</h1>
 
     <script>
-        const myH1 = document.querySelector('.myH1')
-        myH1.innerHTML = 'new H1 content';
+        // const myH1 = document.querySelector('.myH1')
+        const myH1 = document.getElementsByClassName('myH1')
+        myH1[0].innerHTML = 'new H1 content';
+        myH1[0].style.color = 'blue';
+        myH1[0].style.backgroundColor = 'red'
         console.log(myH1);
     </script>
 </body>
