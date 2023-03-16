@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>type</title>
+</head>
+
+<body>
+    <h1></h1>
+
+    <script>
+        let x = [0, 1, 2]
+        let y = [0, 1, 2]
+
+        // console.log('x=y???', x == y);
+
+        const myName = 'Alex';
+        console.log('myName:', myName);
+        console.log('typeof:', typeof myName);
+
+        const myGreet = "Hello";
+        console.log(myGreet + " " + myName);
+
+        const myh1 = document.querySelector('h1')
+        myh1.innerHTML = myGreet + " " + myName
+
+        const newStringUsingBacktick = `${myGreet}, I’m ${myName}.`;
+        myh1.innerHTML = newStringUsingBacktick
+
+        const maxValue = Number.MAX_VALUE;
+        console.log('maxValue:', maxValue);
+
+        const maxSafeInteger = Number.MAX_SAFE_INTEGER;
+        console.log('maxSafeInteger:', maxSafeInteger);
+
+        const minValue = Number.MIN_VALUE;
+        console.log('minValue:', minValue);
+
+        const myBigInt = 9007199254740991n;
+        console.log('myBigInt:', myBigInt);
+
+        const myBigInt2 = BigInt(9007199254740991);
+        console.log('myBigInt2:', myBigInt2);
+
+        // const myNumber = 100;
+        // console.log('myBigInt + myNumber:', myBigInt + myNumber);
+
+        let varible = null;
+
+        console.log('varible', varible);
+
+        if (0n) {
+            console.log('true');
+        }
+        else {
+            console.log('false');
+        }
+
+        const string1 = 'Eason';
+        const string2 = 'Eason';
+        console.log('is string1 === string2? :', string1 === string2);
+
+        const symbol1 = Symbol('Eason');
+        const symbol2 = Symbol('Eason');
+        console.log('is symbol1 === symbol2? :', symbol1 === symbol2);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+
+<body>
+    <script>
+        const myArray = ['My value1', 'My value2', 'My value3'];
+
+        myArray.unshift('value4')
+
+        myArray.pop()
+
+
+        console.log('myArray', myArray);
+
+        console.log('value1:', myArray[0]);
+        console.log('value2:', myArray[1]);
+        console.log('value3:', myArray[2]);
+
+        console.log('陣列長度:', myArray.length);
+
+        myArray[2] = 'new 2'
+        myArray[6] = 'value5';
+        console.log('myArray:', myArray);
+        console.log('myArray[3]:', myArray[3]);
+        console.log('陣列長度:', myArray.length);
+        console.log('slice:', myArray.slice(1, 2));
+        console.log('after slice:', myArray);
+
+        console.log('after splice:', myArray.splice(1, 0, 'a', 'b'));
+        console.log('after splice:', myArray);  
+    </script>
+</body>
+
+</html>
