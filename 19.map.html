@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map</title>
+</head>
+
+<body>
+    <script>
+        const myArray = [1, 2, 3, 4];
+
+        const myNewArray = myArray.map(function (element, index) {
+            return index + element;
+        }).filter(function (element, index) {
+            return element > 3;
+        })
+
+        // const myNewArrayByFilter = myArray.filter(function (element, index) {
+        //     return element > 2;
+        // })
+
+        const myNewArrayByReduce = myArray.reduce((accumulator, currentValue, index, originalArray) => {
+            accumulator += currentValue * 2;
+            return accumulator;
+        }, 100)
+
+
+        console.log(myNewArrayByReduce);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+</head>
+
+<body>
+    <script>
+        function myClosure(x, funcName) {
+            // x=???
+            return function insideClosureFunc() {
+                x = x - 1;
+                console.log(funcName, ' now x:', x);
+            }
+        }
+
+        const newFunc1 = myClosure(x, 'newFunc1');
+        newFunc1();
+
+        const newFunc2 = myClosure(100, 'newFunc2');
+        newFunc2();
+        newFunc1();
+        newFunc1();
+        newFunc2();
+
+    </script>
+</body>
+
+</html>
