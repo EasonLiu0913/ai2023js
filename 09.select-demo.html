@@ -30,6 +30,44 @@
         const cityArray = ["基隆市", "台北市", "新北市"];
         const districtArray = [['中正區', '信義區', '仁愛區', '中山區', '安樂區', '暖暖區', '七堵區'], ['松山區', '信義區', '大安區', '中山區', '中正區', '大同區', '萬華區', '文山區', '南港區', '內湖區', '士林區', '北投區'], ['板橋區', '三重區', '中和區', '永和區', '新莊區', '新店區', '土城區', '蘆洲區', '汐止區', '樹林區', '淡水區']];
 
+        // 當我修改 CITY 選項的時候，請幫我在 district 裡面列出 <OPTION>，每一個 option 都帶有一筆區域資料。
+
+        // 什麼時間，誰，該做什麼事?
+
+        // WHEN? 當我修改 CITY 選項的時候。
+
+        // 誰? 在 district 裡面
+
+        // 做甚麼事? 列出 <OPTION>，每一個 option 都帶有一筆區域資料。
+        //  1.取得對應該城市的區域資料陣列 (阿使用者選什麼城市?)
+        //  2.用跑迴圈的方式，產生好幾筆 OPTION 標籤，組成一筆字串
+        // (怎麼決定迴圈跑幾次? -> 用取得的資料長度來解決)
+        //  3.最後將這字串，寫到 district.innerHTML 
+
+        const citySelector = document.querySelector('#city')
+        const districtSelector = document.querySelector('#district')
+
+        citySelector.addEventListener('change', function (event) {
+            const cityNum = event.target.value;
+            const districtData = districtArray[cityNum];
+
+            // for (let i = 0; i < districtData.length ; i++){
+
+            // }
+
+            let htmlString = ''
+            districtData.map(function (data, index, array) {
+                // console.log('data', data);
+                // console.log('index', index);
+                // console.log('array', array);
+
+                htmlString += `<option value="${index}">${data}</option>`
+            })
+
+            console.log('htmlString', htmlString);
+
+            district.innerHTML = htmlString
+        })
 
 
         // 字串轉陣列
