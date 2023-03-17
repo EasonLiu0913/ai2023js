@@ -18,7 +18,7 @@
     </select>
 
     <select id="district">
-        htmlString += <option value="i">${xxxx}</option>
+        <!-- htmlString += <option value="i">${xxxx}</option> -->
     </select>
 
     <div id="result">
@@ -32,14 +32,12 @@
 
         // 當我修改 CITY 選項的時候，請幫我在 district 裡面列出 <OPTION>，每一個 option 都帶有一筆區域資料。
 
-        // 什麼時間，誰，該做什麼事?
+        // [什麼時間，誰，該做什麼事?]
 
-        // WHEN? 當我修改 CITY 選項的時候。
-
-        // 誰? 在 district 裡面
-
-        // 做甚麼事? 列出 <OPTION>，每一個 option 都帶有一筆區域資料。
-        //  1.取得對應該城市的區域資料陣列 (阿使用者選什麼城市?)
+        // [WHEN?] 當我修改 CITY 選項的時候。
+        // [誰?] 在 district 裡面
+        // [做甚麼事?] 列出 <OPTION>，每一個 option 都帶有一筆區域資料。
+        //  1.取得對應該城市的區域資料陣列 (使用者選什麼城市?)
         //  2.用跑迴圈的方式，產生好幾筆 OPTION 標籤，組成一筆字串
         // (怎麼決定迴圈跑幾次? -> 用取得的資料長度來解決)
         //  3.最後將這字串，寫到 district.innerHTML 

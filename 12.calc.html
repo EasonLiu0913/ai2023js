@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+    <style>
+        .calculator {
+            width: 400px;
+            padding: 10px;
+            background-color: #ccc;
+            font-size: 2rem;
+        }
+
+        .display {
+            min-height: 100px;
+            background-color: #eee;
+            margin: 10px;
+            font-size: 2rem;
+            word-break: break-all;
+        }
+
+        .btns {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            width: 80px;
+            height: 80px;
+            margin: 10px;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn0 {
+            width: 180px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="display"></div>
+        <div class="btns">
+            <div class="btn">7</div>
+            <div class="btn">8</div>
+            <div class="btn">9</div>
+            <div class="btn">+</div>
+            <div class="btn">4</div>
+            <div class="btn">5</div>
+            <div class="btn">6</div>
+            <div class="btn">-</div>
+            <div class="btn">1</div>
+            <div class="btn">2</div>
+            <div class="btn">3</div>
+            <div class="btn">*</div>
+            <div class="btn btn0">0</div>
+            <div class="btn">=</div>
+            <div class="btn">/</div>
+        </div>
+    </div>
+
+    <script>
+        // 使用者點擊數字時，在display顯示數字
+
+        // 使用者點擊 + 的時候，準備讓使用者輸入第二數字
+
+        // 使用者點擊 = 的時候，將數字1 與 數字2 相加，
+        // 顯示在 display 。
+
+
+        const btns = document.querySelector('.btns')
+        const display = document.querySelector('.display')
+
+        let nowNumber = '';
+        let firstNum = 0;
+
+        btns.addEventListener('click', function (event) {
+            console.log('hi', event.target.innerText);
+
+            const clickBtn = event.target.innerText;
+            if (clickBtn === '+') {
+                console.log('user clicked plus btn', nowNumber);
+                firstNum = nowNumber;
+                nowNumber = ''
+            }
+            else if (clickBtn === '=') {
+                nowNumber = +nowNumber + +firstNum
+            }
+            else {
+                nowNumber += clickBtn
+            }
+
+            display.innerText = nowNumber;
+        })
+
+    </script>
+
+</body>
+
+</html>
