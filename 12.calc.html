@@ -66,6 +66,7 @@
     </div>
 
     <script>
+
         // 使用者點擊數字時，在display顯示數字
 
         // 使用者點擊 + 的時候，準備讓使用者輸入第二數字
@@ -79,20 +80,33 @@
 
         let nowNumber = '';
         let firstNum = 0;
+        let isOperator = false;
 
         btns.addEventListener('click', function (event) {
-            console.log('hi', event.target.innerText);
+            console.log('hi', event.target);
+            console.log('hi', event.target.getAttribute('class'));
+            if (event.target.getAttribute('class') === 'btns') return;
 
             const clickBtn = event.target.innerText;
             if (clickBtn === '+') {
                 console.log('user clicked plus btn', nowNumber);
                 firstNum = nowNumber;
-                nowNumber = ''
+
+                // 這個觀察符號的人，應該要站在這裡面
+                isOperator = true
             }
             else if (clickBtn === '=') {
                 nowNumber = +nowNumber + +firstNum
+                isOperator = true;
             }
             else {
+                // ELSE 就是使用者按了任意的數字
+
+                // 如果有人可以告訴我，剛剛使用者按了符號就好了
+                if (isOperator) {
+                    nowNumber = '';
+                    isOperator = false;
+                }
                 nowNumber += clickBtn
             }
 
@@ -100,7 +114,6 @@
         })
 
     </script>
-
 </body>
 
 </html>
